@@ -31,3 +31,6 @@
 /config/database.yml
 /storage
 /log
+
+.env
+.idea
