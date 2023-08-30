@@ -5,6 +5,7 @@ ruby '3.1.2'
 gem 'africastalking-ruby'
 gem 'bootsnap', require: false
 gem 'jsonapi-resources'
+gem 'paper_trail'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
