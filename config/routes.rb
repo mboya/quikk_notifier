@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  post 'notify/notify', as: :notifier
+  post 'notify/simple', as: :simple
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  jsonapi_resources :messages, only: :create
 end
