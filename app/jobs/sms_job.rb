@@ -21,10 +21,20 @@ class SmsJob < ApplicationJob
       puts reports.to_json
     rescue AfricasTalking::AfricasTalkingException => ex
       puts "Encountered an error: #{ex.message}"
+      sleep 5
+      retry if check_for_retry(id) && !id.nil?
     end
   end
 
   def update_message(message_id, response)
     Message.find_by(id: message_id).update(provider_feedback: response)
+  end
+
+  def check_for_retry(message_id)
+    message = Message.find_by(id: message_id)
+    retry_count = message.retries
+    message.increment(:retries) if retry_count <= ENV['MAX_RETRY_COUNT']
+
+    retry_count <= ENV['MAX_RETRY_COUNT']
   end
 end
