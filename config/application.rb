@@ -1,14 +1,37 @@
 require_relative 'boot'
 
-require 'rails/all'
+# require 'rails/all'
+require 'rails'
+require 'action_cable'
+# This list is here as documentation only - it's not used
+# omitted = %w(
+#   active_storage/engine
+#   action_cable/engine
+#   action_mailbox/engine
+#   action_text/engine
+# )
+
+# Only the frameworks in Rails that do not pollute our routes
+%w[
+  active_storage/engine
+  active_record/railtie
+  action_controller/railtie
+  action_view/railtie
+  action_mailer/railtie
+  active_job/railtie
+  rails/test_unit/railtie
+  sprockets/railtie
+].each do |railtie|
+  require railtie
+rescue LoadError
+  # Ignored
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-if %w[development test].include? ENV['RAILS_ENV']
-  Dotenv::Railties.load
-end
+Dotenv::Railtie.load if %w[development test].include? ENV['RAILS_ENV']
 
 HOSTNAME = ENV['HOSTNAME']
 
@@ -29,5 +52,6 @@ module QuickNotifier
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.active_storage.draw_routes = false
   end
 end
