@@ -59,3 +59,5 @@ module QuickNotifier
     end
   end
 end
+
+# config/database.rb
