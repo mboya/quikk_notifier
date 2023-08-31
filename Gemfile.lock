@@ -82,6 +82,8 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dockerfile-rails (1.5.3)
+      rails
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -128,6 +130,8 @@ GEM
       net-protocol
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     paper_trail (14.0.0)
       activerecord (>= 6.0)
@@ -200,6 +204,11 @@ GEM
     rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
+    sentry-rails (5.10.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.10.0)
+    sentry-ruby (5.10.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
@@ -213,12 +222,14 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   africastalking-ruby
   annotate
   bootsnap
   debug
+  dockerfile-rails (>= 1.5)
   dotenv-rails
   jsonapi-resources
   paper_trail
@@ -227,6 +238,8 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)
   rubocop
+  sentry-rails (~> 5.10)
+  sentry-ruby (~> 5.10)
 
 RUBY VERSION
    ruby 3.1.2p20
