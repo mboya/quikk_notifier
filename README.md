@@ -1,6 +1,7 @@
 
 this app is being tested off `insomnia` 
-https://insomnia.rest/products/insomnia
+
+[Insomnia](https://insomnia.rest/products/insomnia)
 
 to import the api collection after cloning the app just import
 ```Insomnia_2023-09-02.json``` file which is part of the repo.
@@ -22,7 +23,8 @@ to import the api collection after cloning the app just import
 ### Deployment
 
 Service used for deployment `flydotio`
-https://fly.io/
+
+[flydotio](https://fly.io/)
 
 how to deploy
 
@@ -37,3 +39,10 @@ Deploy : push the changes into your hosted instance
 Open/Run the app
 
 ```fly open || flyctl open```
+
+### Running Test Instance
+
+The app has been setup and running on the following URI
+
+[Quikk.fly.dev](https://quikk.fly.dev)
+
