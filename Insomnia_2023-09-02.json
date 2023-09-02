@@ -1,0 +1,182 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-09-02T19:53:33.975Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.7",
+  "resources": [
+    {
+      "_id": "req_3c097633dce94260a575d8c3c5c974a8",
+      "parentId": "wrk_9acf87ddb86640378fa3f85e0c666357",
+      "modified": 1693480270300,
+      "created": 1693411708516,
+      "url": "https://quikk.fly.dev/messages",
+      "name": "messages",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"data\": {\n\t\t\"type\": \"messages\",\n\t\t\"attributes\": {\n\t\t\t\"contact\": \"0711222333\",\n\t\t\t\"mode\": \"sms\",\n\t\t\t\"message\": \"Congratulations, your transaction is successful. JSON\"\n\t\t}\n\t}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/vnd.api+json",
+          "id": "pair_6ebbb57428e14f51b2942956eb2dc8e0"
+        },
+        {
+          "name": "User-Agent",
+          "value": "Insomnia/2023.5.7",
+          "id": "pair_dda45c1b29654952858e9a438748b129"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1693411708516,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_9acf87ddb86640378fa3f85e0c666357",
+      "parentId": null,
+      "modified": 1693240220971,
+      "created": 1693240220971,
+      "name": "quikk_notifier",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_8732b396266c468e9728c5d469316efa",
+      "parentId": "wrk_9acf87ddb86640378fa3f85e0c666357",
+      "modified": 1693479535433,
+      "created": 1693322432407,
+      "url": "https://quikk.fly.dev/notify/simple",
+      "name": "simple",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"simple\": {\n\t\t\"contact\": \"0711222333\",\n\t\t\"mode\": \"sms\",\n\t\t\"message\": \"Congratulations, your transaction is successful.\"\n\t}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "Insomnia/2023.5.6"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1693322432407,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9db11065379941bd994181559f67c203",
+      "parentId": "wrk_9acf87ddb86640378fa3f85e0c666357",
+      "modified": 1693491903922,
+      "created": 1693491867200,
+      "url": "localhost:3000/notify/simple",
+      "name": "simple-mailer",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"simple\": {\n\t\t\"contact\": \"info@mail.com\",\n\t\t\"mode\": \"email\",\n\t\t\"message\": \"Congratulations, your transaction is successful.\"\n\t}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "Insomnia/2023.5.6"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1693322158796.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_bfe09fd9cfa14453b2b8c05b5089bcdd",
+      "parentId": "wrk_9acf87ddb86640378fa3f85e0c666357",
+      "modified": 1693477644607,
+      "created": 1693321885186,
+      "url": "https://quikk.fly.dev/notify/notify",
+      "name": "notify",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "Insomnia/2023.5.6"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1693321885186,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_7a796501f0a429092e77e93200ccf0afe2ee51ee",
+      "parentId": "wrk_9acf87ddb86640378fa3f85e0c666357",
+      "modified": 1693240220974,
+      "created": 1693240220974,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1693240220974,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_7a796501f0a429092e77e93200ccf0afe2ee51ee",
+      "parentId": "wrk_9acf87ddb86640378fa3f85e0c666357",
+      "modified": 1693240220975,
+      "created": 1693240220975,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
