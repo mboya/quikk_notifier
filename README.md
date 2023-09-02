@@ -1,24 +1,20 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+this app is being tested off `insomnia` 
+https://insomnia.rest/products/insomnia
 
-Things you may want to cover:
+to import the api collection after cloning the app just import
+```Insomnia_2023-09-02.json``` file which is part of the repo.
 
-* Ruby version
+#### Running the app
 
-* System dependencies
+```git clone git@github.com:mboya/quikk_notifier.git```
 
-* Configuration
+```bundle install```
 
-* Database creation
+```cp config/database.yml.sample config/database.yml```
 
-* Database initialization
+```cp .env.sample .env```
 
-* How to run the test suite
+```rake db:create db:migrate```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```rails server```
